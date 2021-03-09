@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import GlobeSVG from '../../../../assets/globe.svg';
+import { mainRed } from '../../../../styles/variables/colors';
 
 export const HeaderContainer = styled.header`
     padding: 28px 56px;
@@ -55,7 +56,7 @@ export const SignIn = styled.button`
     
     padding: 7px 17px;
 
-    background: #e50914;
+    background: ${ mainRed };
     border: none;
     border-radius: 3px;
 
