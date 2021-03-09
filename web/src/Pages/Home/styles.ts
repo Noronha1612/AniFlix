@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import BackgroundIMG from '../../assets/background-img.jpg';
-import { mainRed } from '../../styles/variables/colors';
+import { lineDark, mainRed } from '../../styles/variables/colors';
 
 export const Container = styled.div`
     overflow: hidden;
@@ -11,7 +11,7 @@ export const FirstSection = styled.div`
     width: 100%;
     height: 77.5vh;
 
-    border-bottom: 8px solid #222222;
+    border-bottom: 8px solid ${ lineDark };
 
     position: relative;
 
