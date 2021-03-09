@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 
 import { HeaderContainer, LogoWrapper, RightContent, SelectWrapper, SelectLang, SignIn } from './styles';
 
 import Logo from '../../../../assets/logo.svg';
 
-const Header: React.FC = () => {
+const Header: React.FC<HTMLAttributes<HTMLHeadElement>> = (props) => {
     return (
-        <HeaderContainer>
+        <HeaderContainer {...props} >
             <LogoWrapper>
                 <img src={ Logo } alt="AniWatch" />
             </LogoWrapper>
