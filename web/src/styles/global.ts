@@ -7,6 +7,7 @@ export default createGlobalStyle`
         outline: none;
         box-sizing: border-box;
         font-family: 'Netflix Sans Icon', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        color: #FFF;
     }
 
     button, a {
@@ -16,5 +17,9 @@ export default createGlobalStyle`
     a {
         text-decoration: none;
         color: initial;
+    }
+
+    body {
+        background: #000;
     }
 `;
