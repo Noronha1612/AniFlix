@@ -6,7 +6,7 @@ export default createGlobalStyle`
         padding: 0;
         outline: none;
         box-sizing: border-box;
-        font-family: 'Netflix Sans Icon', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         color: #FFF;
     }
 
