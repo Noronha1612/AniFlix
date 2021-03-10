@@ -1,10 +1,15 @@
 import React from 'react';
 import { FiChevronRight } from 'react-icons/fi';
+import { FaLongArrowAltDown } from 'react-icons/fa';
 
-import { FirstSection, Container } from './styles';
+import Tv from '../../assets/tv.png';
+import Mobile from '../../assets/mobile.jpg';
+
+import { FirstSection, Container, ContentContainer } from './styles';
 
 import Header from './Components/Header';
-import VideoOnRightContent from './Components/VideoOnRightContent';
+import ContentDescription from './Components/ContentDescription';
+import { blueText } from '../../styles/variables/colors';
 
 const Home: React.FC = () => {
     return (
@@ -29,7 +34,49 @@ const Home: React.FC = () => {
                 </main>
             </FirstSection>
 
-            <VideoOnRightContent />
+            <ContentContainer>
+                <ContentDescription 
+                    title="Aproveite na TV."
+                    titleDescription="Assista em Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, aparelhos de Blu-ray e outros dispositivos."
+                />
+
+                <section className="tv-animation image-wrapper">
+                    <img src={ Tv } alt="tv" />
+                    <div className="video-wrapper">
+                        <video 
+                            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v" 
+                            autoPlay
+                            muted
+                            playsInline
+                            loop
+                        />
+                    </div>
+                </section>
+            </ContentContainer>
+
+            <ContentContainer>
+                <section className="image-wrapper download-demo">
+                    <img src={ Mobile } alt="mobile" />
+                    <div className="download-content">
+                        <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png" alt="thumbnail"/>
+                        
+                        <div className="download-info-wrapper">
+                            <h3>Stranger Things</h3>
+                            <p>Download em andamento...</p>
+                        </div>
+
+                        {/* Icon */}
+                        <div className="icon-wrapper">
+                            <FaLongArrowAltDown size={22} className="icon" />
+                        </div>
+                    </div>
+                </section>
+                
+                <ContentDescription 
+                    title="Baixe séries para assistir offline."
+                    titleDescription="Salve seus títulos favoritos e sempre tenha algo para assistir."
+                />
+            </ContentContainer>
         </Container>
     );
 }
