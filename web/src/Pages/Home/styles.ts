@@ -1,10 +1,82 @@
 import styled from 'styled-components';
 
 import BackgroundIMG from '../../assets/background-img.jpg';
-import { blueText, lineDark, mainRed } from '../../styles/variables/colors';
+
+import GlobeSVG from '../../assets/globe.svg';
+
+import { blueText, darkText, lineDark, mainRed } from '../../styles/variables/colors';
 
 export const Container = styled.div`
     overflow: hidden;
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .content-wrapper {
+            width: 100%;
+            max-width: 1000px;
+
+            padding: 70px 45px;
+
+            & * {
+                color: ${ darkText };
+            }
+
+            & > p:first-child {
+                font-size: 1em;
+                
+                margin-bottom: 30px;
+            }
+
+            ul {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+
+                margin-bottom: 40px;
+
+                row-gap: 12px;
+
+                list-style: none;
+
+                li {
+                    font-size: 13px;
+                    box-sizing: border-box;
+
+                    cursor: pointer;
+
+                    &:hover span {
+                        border-bottom: 1px solid ${ darkText };
+                    }
+                }
+            }
+
+            .select-wrapper {
+                position: relative;
+
+                margin-bottom: 40px;
+
+                &::before {
+                    content: '';
+                    background: url(${ GlobeSVG }) no-repeat center;
+                    width: 37.5px;
+                    height: 100%;
+
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+
+                    z-index: -1;
+                    color: #fff;
+                }
+            }
+
+            .footer-span {
+                font-size: 13px;
+            }
+        }
+    }
 `;
 
 export const FirstSection = styled.div`
@@ -19,11 +91,16 @@ export const FirstSection = styled.div`
         content: '';
         width: 100%;
         height: 100%;
+
         filter: brightness(.4);
+
         position: absolute;
-        background-image: url(${ BackgroundIMG });
+
+        background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/33a85845-b76d-4e18-a74c-5859e3978a91/bcbd0d03-ee4b-4291-9283-efd23be8e0a3/BR-pt-20210308-popsignuptwoweeks-perspective_alpha_website_large.jpg);
         background-size: cover;
         background-position-y: -170px;
+        box-shadow: inset 0 0 180px #000;
+
         z-index: -10;
     }
 
@@ -285,3 +362,15 @@ export const FaqContainer = styled.div`
     }
 `;
 
+export const SelectLangFooter = styled.select`
+    padding: 16px;
+    padding-left: 30px;
+    padding-right: 4px;
+
+    border: 1px solid #333;
+    background-color: transparent;
+    border-radius: 4px;
+
+    font-size: 16px;
+    color: #999;
+`

@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
-import { FiChevronRight, FiPlus } from 'react-icons/fi';
+import React from 'react';
+import { FiChevronRight } from 'react-icons/fi';
 import { FaLongArrowAltDown } from 'react-icons/fa';
 
 import Tv from '../../assets/tv.png';
 import Mobile from '../../assets/mobile.jpg';
 
-import { FirstSection, Container, ContentContainer, FaqContainer } from './styles';
+import { FirstSection, Container, ContentContainer, FaqContainer, SelectLangFooter } from './styles';
 
 import Header from './Components/Header';
 import ContentDescription from './Components/ContentDescription';
-import { blueText } from '../../styles/variables/colors';
 import FaqContent from './Components/FaqContent';
 
 const Home: React.FC = () => {
-    const [ active, setActive ] = useState(false);
 
     return (
         <Container>
@@ -27,7 +25,7 @@ const Home: React.FC = () => {
                         <p>Pronto para assistir? Informe seu email para criar ou reiniciar sua assinatura.</p>
 
                         <div>
-                            <input type="text" placeholder="Entrar" />
+                            <input type="text" placeholder="Email" />
                             <button>
                                 Vamos lá
                                 <FiChevronRight className="icon" />
@@ -131,7 +129,7 @@ const Home: React.FC = () => {
                     <h6>Pronto para assistir? Informe seu email para criar ou reiniciar sua assinatura.</h6>
                     
                     <div className="input-box">
-                            <input type="text" placeholder="Entrar" />
+                            <input type="text" placeholder="Email" />
                             <button>
                                 Vamos lá
                                 <FiChevronRight className="icon" />
@@ -139,6 +137,43 @@ const Home: React.FC = () => {
                     </div>
                 </div>
             </FaqContainer>
+        
+            <footer>
+                <div className="content-wrapper">
+
+                    <p>Dúvidas? Ligue 0800-987-6543</p>
+
+                    <ul className="link-box">
+                        <li><span>Perguntas frequentes</span></li>
+                        <li><span>Centro de ajuda</span></li>
+                        <li><span>Conta</span></li>
+                        <li><span>Imprensa</span></li>
+                        <li><span>Relações com investidores</span></li>
+                        <li><span>Carreiras</span></li>
+                        <li><span>Resgatar cartão pré-pago</span></li>
+                        <li><span>Comprar cartão pré-pago</span></li>
+                        <li><span>Formas de assistir</span></li>
+                        <li><span>Termo de uso</span></li>
+                        <li><span>Privacidade</span></li>
+                        <li><span>Preferências de cookies</span></li>
+                        <li><span>Informações corporativas</span></li>
+                        <li><span>Entre em contato</span></li>
+                        <li><span>Teste de velocidade</span></li>
+                        <li><span>Avisos legais</span></li>
+                        <li><span>Originais AniWatch</span></li>
+                    </ul>
+
+                    <div className="select-wrapper">
+                        <SelectLangFooter>
+                            <option value="pt">Português</option>
+                            <option value="en">English</option>
+                        </SelectLangFooter>     
+                    </div>
+
+                    <p className="footer-span">AniWatch Brasil</p>
+
+                </div>
+            </footer>
         </Container>
     );
 }
