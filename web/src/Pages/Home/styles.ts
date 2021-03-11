@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import BackgroundIMG from '../../assets/background-img.jpg';
-
 import GlobeSVG from '../../assets/globe.svg';
 
 import { blueText, darkText, lineDark, mainRed } from '../../styles/variables/colors';
