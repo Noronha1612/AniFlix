@@ -5,7 +5,7 @@ import { FaLongArrowAltDown } from 'react-icons/fa';
 import Tv from '../../assets/tv.png';
 import Mobile from '../../assets/mobile.jpg';
 
-import { FirstSection, Container, ContentContainer, FaqContainer, SelectLangFooter } from './styles';
+import { Container, FirstSection, ContentContainer, FaqContainer, SelectLangFooter } from './styles';
 
 import Header from './Components/Header';
 import ContentDescription from './Components/ContentDescription';
