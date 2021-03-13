@@ -6,15 +6,18 @@ interface ContentDescriptionProps extends HTMLAttributes<HTMLDivElement> {
     title: string;
     titleDescription: string;
     children?: React.ReactNode;
+    imageOnLeft?: boolean
 };
 
-const ContentDescription: React.FC<ContentDescriptionProps> = ({ title, titleDescription, children, ...props }) => {
+const ContentDescription: React.FC<ContentDescriptionProps> = ({ title, titleDescription, children, imageOnLeft, ...props }) => {
     return (
-        <ContentWrapper { ...props }>
-            <h1>{ title }</h1>
-            <h3>{ titleDescription }</h3>
-        
-            { children }
+        <ContentWrapper imageOnLeft={ imageOnLeft } { ...props }>
+            <div>
+                <h1>{ title }</h1><br/>
+                <h3>{ titleDescription }</h3>
+            
+                { children }
+            </div>
         </ContentWrapper>
     );
 }

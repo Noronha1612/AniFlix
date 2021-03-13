@@ -55,25 +55,28 @@ const Home: React.FC = () => {
                 </section>
             </ContentContainer>
 
-            <ContentContainer>
+            <ContentContainer imageOnLeft>
                 <section className="image-wrapper download-demo">
-                    <img src={ Mobile } alt="mobile" />
-                    <div className="download-content">
-                        <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png" alt="thumbnail"/>
-                        
-                        <div className="download-info-wrapper">
-                            <h3>Stranger Things</h3>
-                            <p>Download em andamento...</p>
-                        </div>
+                    <div className="download-wrapper">
+                        <img src={ Mobile } alt="mobile" />
+                        <div className="download-content">
+                            <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png" alt="thumbnail"/>
+                            
+                            <div className="download-info-wrapper">
+                                <h3>Stranger Things</h3>
+                                <p>Download em andamento...</p>
+                            </div>
 
-                        {/* Icon */}
-                        <div className="icon-wrapper">
-                            <FaLongArrowAltDown size={22} className="icon" />
-                        </div>
+                            {/* Icon */}
+                            <div className="icon-wrapper">
+                                <FaLongArrowAltDown size={22} className="icon" />
+                            </div>
+                        </div> 
                     </div>
                 </section>
                 
-                <ContentDescription 
+                <ContentDescription
+                    imageOnLeft
                     title="Baixe séries para assistir offline."
                     titleDescription="Salve seus títulos favoritos e sempre tenha algo para assistir."
                 />
@@ -86,16 +89,18 @@ const Home: React.FC = () => {
                 />
 
                 <section className="tv-animation many-devices">
-                    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png" alt="thumbnail"/>
-                
-                    <div className="video-wrapper vw2">
-                        <video 
-                            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                        />
+                    <div className="animation-wrapper">
+                        <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png" alt="thumbnail"/>
+                    
+                        <div className="video-wrapper vw2">
+                            <video 
+                                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                            />
+                        </div>
                     </div>
                 </section>
             </ContentContainer>
