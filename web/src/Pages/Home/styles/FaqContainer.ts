@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { lineDark, mainRed } from '../../../styles/variables/colors';
+import { lineDark } from '../../../styles/variables/colors';
 
 export const FaqContainer = styled.div`
     border-bottom: 8px solid ${ lineDark };

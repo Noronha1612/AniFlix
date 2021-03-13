@@ -1,5 +1,4 @@
 import React from 'react';
-import { FiChevronRight } from 'react-icons/fi';
 import { FaLongArrowAltDown } from 'react-icons/fa';
 
 import Tv from '../../assets/tv.png';

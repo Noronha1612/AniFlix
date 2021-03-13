@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { lineDark, mainRed } from '../../../styles/variables/colors';
+import { lineDark } from '../../../styles/variables/colors';
 
 export const FirstSection = styled.div`
     width: 100%;
