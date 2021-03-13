@@ -10,6 +10,7 @@ import { Container, FirstSection, ContentContainer, FaqContainer, SelectLangFoot
 import Header from './Components/Header';
 import ContentDescription from './Components/ContentDescription';
 import FaqContent from './Components/FaqContent';
+import RegisterField from './Components/RegisterField';
 
 const Home: React.FC = () => {
 
@@ -24,13 +25,7 @@ const Home: React.FC = () => {
                         <h4>Assista onde quiser. Cancele quando quiser.</h4>
                         <p>Pronto para assistir? Informe seu email para criar ou reiniciar sua assinatura.</p>
 
-                        <div>
-                            <input type="text" placeholder="Email" />
-                            <button>
-                                Vamos lá
-                                <FiChevronRight className="icon" />
-                            </button>
-                        </div>
+                        <RegisterField />
                     </section>
                 </main>
             </FirstSection>
@@ -133,13 +128,7 @@ const Home: React.FC = () => {
                 <div className="sign-wrapper">
                     <h6>Pronto para assistir? Informe seu email para criar ou reiniciar sua assinatura.</h6>
                     
-                    <div className="input-box">
-                            <input type="text" placeholder="Email" />
-                            <button>
-                                Vamos lá
-                                <FiChevronRight className="icon" />
-                            </button>
-                    </div>
+                    <RegisterField />
                 </div>
             </FaqContainer>
         
