@@ -13,6 +13,10 @@ export const HeaderContainer = styled.header`
         z-index: 10;
     }
 
+    @media(max-width: 950px) {
+        padding: 28px 38px;
+    }
+
     @media (max-width: 550px) {
         padding: 18px 32px;
     }
@@ -28,6 +32,11 @@ export const LogoWrapper = styled.section`
     
     @media (max-width: 1450px) {
         height: 2.25rem;
+        width: auto;
+    }
+
+    @media(max-width: 950px) {
+        height: 2rem;
         width: auto;
     }
 
@@ -75,7 +84,6 @@ export const SelectLang = styled.select`
 `
 
 export const SignIn = styled.button`
-    
     padding: 7px 17px;
 
     background: ${ mainRed };

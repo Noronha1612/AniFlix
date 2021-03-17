@@ -92,6 +92,10 @@ export const FirstSection = styled.div`
         height: 43.75rem;
     }
 
+    @media(max-width: 950px) {
+        height: 46rem;
+    }
+
     @media (max-width: 550px) {
         height: 32.5rem;
     }
