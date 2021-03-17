@@ -59,6 +59,7 @@ export const SelectWrapper = styled.label`
 
     border: 1px solid #fff;
     border-radius: 4px;
+    background: #000;
 
     padding: .3rem;
 

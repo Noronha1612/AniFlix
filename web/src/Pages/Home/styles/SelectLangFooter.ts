@@ -6,7 +6,7 @@ export const SelectLangFooter = styled.select`
     padding-right: 4px;
 
     border: 1px solid #333;
-    background-color: transparent;
+    background-color: #000;
     border-radius: 4px;
 
     font-size: 16px;
