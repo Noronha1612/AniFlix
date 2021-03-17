@@ -96,6 +96,14 @@ export const FirstSection = styled.div`
         height: 46rem;
     }
 
+    @media(max-width: 740px) {
+        height: 44.5rem;
+        
+        main {
+            transform: translateY(-80px);
+        }
+    }
+
     @media (max-width: 550px) {
         height: 32.5rem;
     }
