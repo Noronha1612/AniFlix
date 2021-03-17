@@ -25,6 +25,11 @@ export const LogoWrapper = styled.section`
     img {
         height: 100%;
     }
+    
+    @media (max-width: 1450px) {
+        height: 2.25rem;
+        width: auto;
+    }
 
     @media (max-width: 550px) {
         height: 1.5rem;
@@ -84,5 +89,6 @@ export const SignIn = styled.button`
     @media (max-width: 550px) {
         padding: 4px 9px;
         font-size: .9rem;
+        margin-left: 10px;
     }
 `

@@ -10,7 +10,7 @@ export const Container = styled.div`
     align-items: center;
 
     input {
-        width: 70%;
+        width: 100%;
         height: 100%;
         border: none;
 
@@ -22,7 +22,7 @@ export const Container = styled.div`
     }
 
     button {
-        width: 30%;
+        width: 44%;
         height: 100%;
         border: none;
 
@@ -38,6 +38,10 @@ export const Container = styled.div`
         .icon {
             margin-left: 8px;
         }
+    }
+
+    @media (max-width: 1450px) {
+        height: 60px;
     }
 
     @media(max-width: 950px) {

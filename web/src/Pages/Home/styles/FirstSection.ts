@@ -4,6 +4,7 @@ import { lineDark } from '../../../styles/variables/colors';
 
 export const FirstSection = styled.div`
     width: 100%;
+    min-width: 338px;
     height: 47rem;
 
     border-bottom: 8px solid ${ lineDark };
@@ -58,9 +59,17 @@ export const FirstSection = styled.div`
                 margin-bottom: 16px;
             }
         }
-        
+
+        @media (max-width: 1450px) {
+            section {
+                h1 {
+                    font-size: 3.125rem;
+                }
+            }
+        }
+
         @media (max-width: 550px) {
-            padding: 0 20px;
+            padding: 0 30px;
 
             section {
                 h1 {
@@ -77,21 +86,13 @@ export const FirstSection = styled.div`
                 }
             }
         }
-
-        @media (max-width: 1450px) {
-            section {
-                h1 {
-                    font-size: 3.125rem;
-                }
-            }
-        }
-    }
-
-    @media (max-width: 550px) {
-        height: 32.5rem;
     }
 
     @media (max-width: 1450px) {
         height: 43.75rem;
+    }
+
+    @media (max-width: 550px) {
+        height: 32.5rem;
     }
 `;
