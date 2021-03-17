@@ -12,6 +12,10 @@ export const HeaderContainer = styled.header`
     & * {
         z-index: 10;
     }
+
+    @media (max-width: 550px) {
+        padding: 18px 32px;
+    }
 `;
 
 export const LogoWrapper = styled.section`
@@ -20,6 +24,11 @@ export const LogoWrapper = styled.section`
     
     img {
         height: 100%;
+    }
+
+    @media (max-width: 550px) {
+        height: 1.5rem;
+        width: auto;
     }
 `;
 
@@ -49,6 +58,10 @@ export const SelectWrapper = styled.label`
         width: 20px;
         height: 20px;
     }   
+
+    @media (max-width: 550px) {
+        padding: .15rem;
+    }
 `;
 
 export const SelectLang = styled.select`
@@ -67,4 +80,9 @@ export const SignIn = styled.button`
     font-size: 1rem;
 
     margin-left: 30px;
+
+    @media (max-width: 550px) {
+        padding: 4px 9px;
+        font-size: .9rem;
+    }
 `
