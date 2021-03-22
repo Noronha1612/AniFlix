@@ -40,4 +40,17 @@ export const ContentWrapper = styled.div<{ imageOnLeft?: boolean }>`
             }
         }
     }
+    
+    @media (max-width: 740px) {
+        & > div {
+            max-width: 100%;
+            
+            h1 {
+                font-size: 1.625rem;
+            }
+            h3 {
+                font-size: 1.125rem;
+            }
+        }
+    }
 `;
