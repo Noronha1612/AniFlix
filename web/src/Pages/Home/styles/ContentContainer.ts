@@ -24,15 +24,29 @@ export const ContentContainer = styled.div<{ imageOnLeft?: boolean }>`
             width: 530px;
         }
 
-        @media (max-width: 1200px) {
-            
+        @media (max-width: 740px) {
+            & > img {
+                width: 100%;
+                min-width: 288px;
+            }
         }
     }
 
     .tv-animation {
         position: relative;
 
-        max-width: 530px;
+        width: 530px;
+
+        .animation-wrapper {
+            @media (max-width: 740px) {
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    min-width: 288px;
+                }
+            }
+        }
 
         .video-wrapper {
             position: absolute;
@@ -71,23 +85,41 @@ export const ContentContainer = styled.div<{ imageOnLeft?: boolean }>`
     .download-demo {
         position: relative;
 
+        width: 100%;
+
         .download-wrapper {
             position: relative;
-            width: 530px;
+            width: 380px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media (max-width: 740px) {
+                width: 100%;
+                min-width: 320px;
+
+                & > img {
+                    width: 100%;
+                }
+            }
         }
         
         .download-content {
             display: flex;
             align-items: center;
+            justify-content: space-between;
 
             position: absolute;
             bottom: 10%;
             left: 50%;
             transform: translateX(-50%);
 
-            width: 23rem;
-            height: 6.5rem;
-            padding: .5rem .75rem;
+            width: 100%;
+            max-width: 380px;
+            height: 30%;
+            max-height: 90px;
+            padding: .5rem 1.25rem .5rem 1rem;
 
             background: #000;
             border: 2px solid ${ lineDark };
@@ -104,7 +136,7 @@ export const ContentContainer = styled.div<{ imageOnLeft?: boolean }>`
             }
 
             .icon-wrapper {
-                margin-left: 2rem;
+                margin-left: 3.25rem;
                 border-bottom: .17rem solid #fff;
 
                 .icon {
@@ -116,6 +148,22 @@ export const ContentContainer = styled.div<{ imageOnLeft?: boolean }>`
             img {
                 height: 100%;
                 width: auto;
+            }
+
+            @media (max-width: 480px) {
+                width: 85%;
+
+                max-height: 70px;
+
+                .download-info-wrapper {
+                    margin-left: .4rem;
+
+                    font-size: 70%;
+                }
+
+                .icon-wrapper {
+                    margin-left: 1.85rem;
+                }
             }
         }
     }
