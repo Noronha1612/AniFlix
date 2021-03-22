@@ -67,6 +67,12 @@ export const FaqContentContainer = styled.li<{ active: boolean }>`
                 font-size: .8rem;
             }
         }
+
+        .content-togglable {
+            p {
+                font-size: 1.125rem;
+            }
+        }
     }
     
     @media (max-width: 550px) {
