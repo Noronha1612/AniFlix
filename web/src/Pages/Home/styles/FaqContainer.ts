@@ -9,7 +9,7 @@ export const FaqContainer = styled.div`
     align-items: center;
     flex-direction: column;
 
-    padding: 70px 45px;
+    padding: 70px 125px;
     
     h1 {
         font-size: 3.125rem;
@@ -27,7 +27,7 @@ export const FaqContainer = styled.div`
         width: 100%;
         max-width: 815px;
 
-        padding: 0 3rem;
+        padding: 0 1.625rem;
 
         text-align: center;
 
@@ -35,6 +35,29 @@ export const FaqContainer = styled.div`
             margin-bottom: 20px;
             font-size: 1.2rem;
             font-weight: 400;
+        }
+    }
+
+    @media (max-width: 950px) {
+        padding: 70px 80px 125px 80px;
+    }
+    
+    @media (max-width: 550px) {
+        padding: 40px 0 110px 0;
+
+        h1 {
+            font-size: 1.625rem;
+        }
+
+        ul {
+            padding: 30px 0;
+            max-width: auto;
+        }
+
+        .sign-wrapper {
+            h6 {
+                padding: 0 2.25rem;
+            }
         }
     }
 `;

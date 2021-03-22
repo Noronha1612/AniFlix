@@ -54,4 +54,22 @@ export const FaqContentContainer = styled.li<{ active: boolean }>`
     & + & {
         margin-top: 8px;
     }
+    
+    @media (max-width: 950px) {
+        .always-shown {
+            padding: .6em 1.6em .6em 1.6em;
+            font-size: 1.15rem;
+            h4 {
+                font-weight: 400;   
+            }
+
+            .icon {
+                font-size: .8rem;
+            }
+        }
+    }
+    
+    @media (max-width: 550px) {
+        max-width: auto;
+    }
 `;

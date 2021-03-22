@@ -64,4 +64,12 @@ export const Container = styled.div`
             }
         }
     }  
+    
+    @media(max-width: 740px) {
+        height: 50px;
+        
+        input {
+            font-size: .85rem;
+        }
+    }
 `;
