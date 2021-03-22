@@ -9,7 +9,7 @@ export const ContentContainer = styled.div<{ imageOnLeft?: boolean }>`
 
     display: grid;
     grid-template-areas: "${props => props.imageOnLeft ? 'image description' : 'description image'}";
-    column-gap: 70px;
+    column-gap: 100px;
 
     .image-wrapper {
         grid-area: image;
@@ -202,4 +202,8 @@ export const ContentContainer = styled.div<{ imageOnLeft?: boolean }>`
             }
         }
     } 
+    
+    @media (max-width: 740px) {
+        padding: 70px 10px;
+    }
 `;
