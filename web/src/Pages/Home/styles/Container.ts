@@ -7,6 +7,8 @@ import GlobeSVG from '../../../assets/globe.svg';
 export const Container = styled.div`
     overflow: hidden;
 
+    min-width: 338px;
+
     footer {
         display: flex;
         justify-content: center;
@@ -47,6 +49,14 @@ export const Container = styled.div`
                     &:hover span {
                         border-bottom: 1px solid ${ darkText };
                     }
+                }
+
+                @media(max-width: 740px) {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                @media(max-width: 500px) {
+                    grid-template-columns: repeat(2, 1fr);
                 }
             }
 
