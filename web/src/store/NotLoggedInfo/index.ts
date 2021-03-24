@@ -8,7 +8,7 @@ const INITIAL_STATE: NotLoggedInfoData = {
 const reducer: Reducer<NotLoggedInfoData> = (state = INITIAL_STATE, actions) => {
     switch (actions.type) {
         case NotLoggedInfoActions.SET_EMAIL:
-            const emailToBeInserted = actions.payload.email;
+            const emailToBeInserted = actions.payload;
 
             return { ...state, possibleEmail: emailToBeInserted }
         
