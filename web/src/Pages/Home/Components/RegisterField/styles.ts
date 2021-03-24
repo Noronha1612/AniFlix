@@ -1,7 +1,19 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { mainRed } from '../../../../styles/variables/colors';
 
-export const Container = styled.div`
+const labelTransition = css`
+    transform: translateY(-150%);
+    font-size: 14px;
+    font-weight: bold;
+
+    @media (max-width: 950px) {
+        font-size: 12px;
+        font-weight: 600;
+        transform: translateY(-130%);
+    }
+`;
+
+export const FormContainer = styled.form`
     width: 100%;
     height: 70px;
 
@@ -9,16 +21,47 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
 
-    input {
+    .input-box {
         width: 100%;
         height: 100%;
-        border: none;
+        min-height: 50px;
+        position: relative;
 
-        font-size: 1em;
+        background: #fff;
 
-        padding: 0 12px;
+        label {
+            position: absolute;
 
-        color: #000;
+            color: #8c8c8c;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            transition: .1s;
+        }
+
+        input {
+            width: 100%;
+            height: 100%;
+
+            border: none;
+            background: none;
+
+            font-size: 1em;
+
+            padding: 0 10px;
+
+            color: #000;
+            transform: translateY(6px);
+
+            @media (max-width: 950px) {
+                font-size: .85rem;
+            }
+        }
+
+        input:focus ~ label[for="email-input"] { 
+            ${ labelTransition } 
+        }
     }
 
     button {
@@ -47,9 +90,8 @@ export const Container = styled.div`
     @media(max-width: 950px) {
         flex-direction: column;
 
-        input {
+        .input-box {
             margin-top: 60px;
-            padding: 20px 10px;
         }
 
         button {
