@@ -59,7 +59,7 @@ export const FormContainer = styled.form`
             }
         }
 
-        input:focus ~ label[for="email-input"] { 
+        input:focus ~ label { 
             ${ labelTransition } 
         }
     }
