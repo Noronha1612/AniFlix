@@ -1,25 +1,24 @@
-import React, { FormEvent, useCallback, useMemo, useState } from 'react';
+import React, { FormEvent, useCallback, useMemo } from 'react';
 import crypto from 'crypto';
 import { FiChevronRight } from 'react-icons/fi';
 
-import { useDispatch, useSelector, useStore } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { set_email } from '../../../../store/NotLoggedInfo/actions';
-import { ApplicationStore } from '../../../../store';
 
 import { FormContainer } from './styles';
+import { useHistory } from 'react-router';
 
 const RegisterField: React.FC = () => {
     const randomInputId = useMemo(() => crypto.randomBytes(8).toString('HEX'), []);
 
-    // const store = useStore<ApplicationStore>();
-    const store = useStore<ApplicationStore>();
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         
-        
-    }, []);
+        history.push('/login');
+    }, [ history ]);
 
     return (
         <FormContainer onSubmit={handleSubmit} >

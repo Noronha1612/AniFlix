@@ -1,10 +1,13 @@
 import React, { HTMLAttributes } from 'react';
+import { useHistory } from 'react-router';
 
 import { HeaderContainer, LogoWrapper, RightContent, SelectWrapper, SelectLang, SignIn } from './styles';
 
 import Logo from '../../../../assets/logo.svg';
 
 const Header: React.FC<HTMLAttributes<HTMLHeadElement>> = (props) => {
+    const history = useHistory();
+
     return (
         <HeaderContainer {...props} >
             <LogoWrapper>
@@ -19,7 +22,7 @@ const Header: React.FC<HTMLAttributes<HTMLHeadElement>> = (props) => {
                     </SelectLang>
                 </SelectWrapper>
 
-                <SignIn>Entrar</SignIn>
+                <SignIn onClick={ () => history.push('/login') }>Entrar</SignIn>
             </RightContent>
         </HeaderContainer>
     );
