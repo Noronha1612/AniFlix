@@ -13,7 +13,7 @@ const labelTransition = css`
     }
 `;
 
-export const FormContainer = styled.form`
+export const FormContainer = styled.form<{ hasContent?: boolean }>`
     width: 100%;
     height: 70px;
 
@@ -61,6 +61,10 @@ export const FormContainer = styled.form`
 
         input:focus ~ label { 
             ${ labelTransition } 
+        }
+
+        label {
+            ${ props => props.hasContent && labelTransition }
         }
     }
 

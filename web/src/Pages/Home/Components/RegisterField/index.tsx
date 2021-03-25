@@ -1,9 +1,10 @@
-import React, { FormEvent, useCallback, useMemo } from 'react';
+import React, { FormEvent, useCallback, useMemo, useState } from 'react';
 import crypto from 'crypto';
 import { FiChevronRight } from 'react-icons/fi';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useStore } from 'react-redux';
 import { set_email } from '../../../../store/NotLoggedInfo/actions';
+import { ApplicationStore } from '../../../../store';
 
 import { FormContainer } from './styles';
 import { useHistory } from 'react-router';
@@ -13,6 +14,9 @@ const RegisterField: React.FC = () => {
 
     const dispatch = useDispatch();
     const history = useHistory();
+    const store = useStore<ApplicationStore>();
+
+    const [ email, setEmail ] = useState(store.getState().NotLoggedInfo.possibleEmail);
 
     const handleSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -21,12 +25,19 @@ const RegisterField: React.FC = () => {
     }, [ history ]);
 
     return (
-        <FormContainer onSubmit={handleSubmit} >
+        <FormContainer 
+            onSubmit={handleSubmit} 
+            hasContent={ !!email }
+        >
             <div className="input-box">
                 <input 
                     type="email" 
                     id={ randomInputId }
-                    onChange={ (e) => dispatch(set_email(e.target.value)) }
+                    value={ email }
+                    onChange={ (e) => {
+                        dispatch(set_email(e.target.value));
+                        setEmail(e.target.value);
+                    }}
                 />
                 <label htmlFor={ randomInputId }>Email</label>
             </div>
