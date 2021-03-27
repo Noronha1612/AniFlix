@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const backgroundUrl = 'https://assets.nflxext.com/ffe/siteui/vlv3/92bb3a0b-7e91-40a0-b27b-f2c3ac9ef6e4/b21e3ad9-aa05-4122-b6a8-977eb91d5657/BR-pt-20210322-popsignuptwoweeks-perspective_alpha_website_large.jpg'
 
@@ -63,4 +63,73 @@ export const LoginContainer = styled.div`
     margin: 90px 0;
 
     border-radius: 4px;
+
+    h1 {
+        font-size: 32px;
+        font-weight: 700px;
+        margin-bottom: 28px;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        width: 100%;
+
+        button {
+            width: 100%;
+        }
+    }
+`
+
+const labelTransition = css`
+    top: 30%;
+    font-size: .7rem;
+`;
+
+export const InputBox = styled.div<{ hasContent?: boolean }>`
+    width: 100%;
+    height: 50px;
+    position: relative;
+
+    margin-bottom: 16px;
+
+    input {
+        width: 100%;
+        height: 100%;
+        line-height: 50px;
+        padding: 16px 20px 0;
+
+        border: none;
+
+        background: #333;
+        border-radius: 4px;
+
+        ${ props => props.hasContent && `background: #454545;` }
+
+        &:focus {
+            background: #454545;
+        }
+    }
+
+    label {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+
+        color: #8c8c8c;
+        font-size: 1rem;
+
+        cursor: text;
+
+        transition: .1s;
+        ${ props => props.hasContent && labelTransition }
+    }
+
+    input:focus ~ label {
+        ${ labelTransition }
+    }
 `

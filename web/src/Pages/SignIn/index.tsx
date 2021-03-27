@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
-import { Container, LoginBody, LoginContainer } from './styles';
+import { Container, InputBox, LoginBody, LoginContainer } from './styles';
 
 import LogoSvg from '../../assets/logo.svg';
+import { set_email } from '../../store/NotLoggedInfo/actions';
 
 const SignIn: React.FC = () => {
+    const dispatch = useDispatch();
+
+    const [ email, setEmail ] = useState('');
+    const [ password, setPassword ] = useState('');
+
     return (
         <Container>
             <Link to="/">
@@ -16,13 +23,33 @@ const SignIn: React.FC = () => {
                 <LoginContainer>
                     <h1>Entrar</h1>
                     <form>
-                        <input type="text" placeholder="Email ou número de telefone"/>
-                        <input type="password" placeholder="Senha"/>
+                        <InputBox hasContent={ !!email } >
+                            <input 
+                                type="email"
+                                autoComplete="email"
+                                id="email-input-signin"
+                                value={ email }
+                                onChange={(e) => { 
+                                    dispatch(set_email(e.target.value));
+                                    setEmail(e.target.value);
+                                }}
+                            />
+                            <label htmlFor="email-input-signin">Email ou número de telefone</label>
+                        </InputBox>
+                        <InputBox hasContent={ !!password } >
+                            <input 
+                                type="password" 
+                                id="password-input-signin"
+                                value={ password }
+                                onChange={(e) => { setPassword(e.target.value) }}
+                            />
+                            <label htmlFor="password-input-signin">Senha</label>    
+                        </InputBox>
 
                         <button type="submit">Entrar</button>
-                        <input type="checkbox" id="remember-check"/>
                     </form>
 
+                    <input type="checkbox" id="remember-check"/>
                     <label htmlFor="remember-check">Lembre-se de mim</label>
                     <a>Precisa de ajuda?</a>
 
