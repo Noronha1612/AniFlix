@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
@@ -13,6 +13,12 @@ const SignIn: React.FC = () => {
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
 
+    const [ showPassword, setShowPassword ] = useState(false);
+
+    const handleSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+    }, []);
+
     return (
         <Container>
             <Link to="/">
@@ -22,7 +28,7 @@ const SignIn: React.FC = () => {
             <LoginBody>
                 <LoginContainer>
                     <h1>Entrar</h1>
-                    <form>
+                    <form onSubmit={ handleSubmit } >
                         <InputBox hasContent={ !!email } >
                             <input 
                                 type="email"
@@ -38,12 +44,17 @@ const SignIn: React.FC = () => {
                         </InputBox>
                         <InputBox hasContent={ !!password } >
                             <input 
-                                type="password" 
+                                type={ showPassword ? 'text' : 'password' }
                                 id="password-input-signin"
                                 value={ password }
                                 onChange={(e) => { setPassword(e.target.value) }}
                             />
-                            <label htmlFor="password-input-signin">Senha</label>    
+                            <label htmlFor="password-input-signin">Senha</label>
+                            <button 
+                                onClick={() => setShowPassword(!showPassword)} 
+                                className="showPassword"
+                                title={ showPassword ? 'Ocultar senha' : 'Exibir senha'}
+                            >{ showPassword ? 'Ocultar' : 'Mostrar' }</button>
                         </InputBox>
 
                         <button type="submit">Entrar</button>

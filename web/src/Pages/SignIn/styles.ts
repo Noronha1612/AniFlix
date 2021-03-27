@@ -107,6 +107,8 @@ export const InputBox = styled.div<{ hasContent?: boolean }>`
         background: #333;
         border-radius: 4px;
 
+        font-size: 1rem;
+
         ${ props => props.hasContent && `background: #454545;` }
 
         &:focus {
@@ -131,5 +133,28 @@ export const InputBox = styled.div<{ hasContent?: boolean }>`
 
     input:focus ~ label {
         ${ labelTransition }
+    }
+
+    .showPassword {
+        position: absolute;
+        right: 0;
+
+        width: initial;
+        height: 100%;
+
+        padding: 0 12px;
+
+        background: none;
+        border: none;
+
+        font-weight: 300;
+        font-size: .85rem;
+        color: #8c8c8c;
+
+        text-transform: uppercase;
+    }
+
+    input:not(:focus) ~ .showPassword {
+        ${ props => !props.hasContent && 'display: none;' };
     }
 `
