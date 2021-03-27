@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { mainRed } from '../../styles/variables/colors';
 
 const backgroundUrl = 'https://assets.nflxext.com/ffe/siteui/vlv3/92bb3a0b-7e91-40a0-b27b-f2c3ac9ef6e4/b21e3ad9-aa05-4122-b6a8-977eb91d5657/BR-pt-20210322-popsignuptwoweeks-perspective_alpha_website_large.jpg'
 
@@ -80,6 +81,16 @@ export const LoginContainer = styled.div`
 
         button {
             width: 100%;
+
+            padding: 16px;
+            margin: 24px 0 12px 0;
+
+            border: none;
+            border-radius: 4px;
+            background: ${ mainRed };
+
+            font-size: 1rem;
+            font-weight: 700;
         }
     }
 `
@@ -138,6 +149,7 @@ export const InputBox = styled.div<{ hasContent?: boolean }>`
     .showPassword {
         position: absolute;
         right: 0;
+        transform: translateY(-50%);
 
         width: initial;
         height: 100%;
