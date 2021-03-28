@@ -60,18 +60,25 @@ const SignIn: React.FC = () => {
                         <button type="submit">Entrar</button>
                     </form>
 
-                    <input type="checkbox" id="remember-check"/>
-                    <label htmlFor="remember-check">Lembre-se de mim</label>
-                    <a>Precisa de ajuda?</a>
+                    <div className="utils-wrapper">
+                        <div className="checkbox-wrapper">
+                            <input type="checkbox" id="remember-check"/>
+                            <label htmlFor="remember-check">Lembre-se de mim</label>
+                        </div>
+                        <a href="/">Precisa de ajuda?</a>
+                    </div>
 
                     <button>
-                        F { /* Facebook Icon */ }
+                        <img alt="fb-icon" className="icon-facebook" src="https://assets.nflxext.com/ffe/siteui/login/images/FB-f-Logo__blue_57.png" />
                         <span>Conectar com Facebook</span>
                     </button>
 
-                    <span>Novo por aqui? <a>Assine agora</a></span>
+                    <div className="register-btn">
+                        <span>Novo por aqui?</span>
+                        <a href="/">Assine agora</a>
+                    </div>
 
-                    <p>Esta página é protegida pelo Google reCAPTCHA para garantir que você não é um robô. <a>Saiba mais.</a></p>
+                    <p>Esta página é protegida pelo Google reCAPTCHA para garantir que você não é um robô. <a href="/">Saiba mais.</a></p>
                 </LoginContainer>
             </LoginBody>
         </Container>
