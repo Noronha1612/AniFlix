@@ -1,17 +1,19 @@
 import React, { FormEvent, useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Container, FooterSignIn, InputBox, LoginBody, LoginContainer } from './styles';
 
 import LogoSvg from '../../assets/logo.svg';
 import GlobeSVG from '../../assets/globe.svg';
 import { set_email } from '../../store/NotLoggedInfo/actions';
+import { ApplicationStore } from '../../store';
 
 const SignIn: React.FC = () => {
     const dispatch = useDispatch();
+    const possibleEmail = useSelector((store: ApplicationStore) => store.NotLoggedInfo.possibleEmail);
 
-    const [ email, setEmail ] = useState('');
+    const [ email, setEmail ] = useState(possibleEmail);
     const [ password, setPassword ] = useState('');
 
     const [ showPassword, setShowPassword ] = useState(false);
