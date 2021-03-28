@@ -2,7 +2,7 @@ import React, { FormEvent, useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import { Container, InputBox, LoginBody, LoginContainer } from './styles';
+import { Container, FooterSignIn, InputBox, LoginBody, LoginContainer } from './styles';
 
 import LogoSvg from '../../assets/logo.svg';
 import { set_email } from '../../store/NotLoggedInfo/actions';
@@ -81,6 +81,26 @@ const SignIn: React.FC = () => {
                     <p>Esta página é protegida pelo Google reCAPTCHA para garantir que você não é um robô. <a href="/">Saiba mais.</a></p>
                 </LoginContainer>
             </LoginBody>
+
+            <FooterSignIn>
+                <h6>Dúvidas? Ligue 0800-761-4631</h6>
+
+                <div className="hyperlinks-container">
+                    <a href="/">Perguntas frequentes</a>
+                    <a href="/">Centro de ajuda</a>
+                    <a href="/">Termos de uso</a>
+                    <a href="/">Privacidade</a>
+                    <a href="/">Preferências de cookies</a>
+                    <a href="/">Informações coorporativas</a>
+                </div>
+
+                <label htmlFor="select-lang-signin" className="select-wrapper">
+                    <select id="select-lang-signin" >
+                        <option value="pt">Português</option>
+                        <option value="en">English</option>
+                    </select>
+                </label>
+            </FooterSignIn>
         </Container>
     );
 }

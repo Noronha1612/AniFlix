@@ -228,7 +228,7 @@ export const LoginContainer = styled.div`
             }
         }
     }
-`
+`;
 
 const labelTransition = css`
     top: 30%;
@@ -304,4 +304,8 @@ export const InputBox = styled.div<{ hasContent?: boolean }>`
     input:not(:focus) ~ .showPassword {
         ${ props => !props.hasContent && 'display: none;' };
     }
-`
+`;
+
+export const FooterSignIn = styled.footer`
+    
+`;
