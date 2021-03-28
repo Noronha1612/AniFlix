@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { Container, FooterSignIn, InputBox, LoginBody, LoginContainer } from './styles';
 
 import LogoSvg from '../../assets/logo.svg';
+import GlobeSVG from '../../assets/globe.svg';
 import { set_email } from '../../store/NotLoggedInfo/actions';
 
 const SignIn: React.FC = () => {
@@ -83,23 +84,28 @@ const SignIn: React.FC = () => {
             </LoginBody>
 
             <FooterSignIn>
-                <h6>Dúvidas? Ligue 0800-761-4631</h6>
+                <div className="content">
+                    <h6>Dúvidas? Ligue 0800-761-4631</h6>
 
-                <div className="hyperlinks-container">
-                    <a href="/">Perguntas frequentes</a>
-                    <a href="/">Centro de ajuda</a>
-                    <a href="/">Termos de uso</a>
-                    <a href="/">Privacidade</a>
-                    <a href="/">Preferências de cookies</a>
-                    <a href="/">Informações coorporativas</a>
+                    <div className="hyperlinks-container">
+                        <a href="/"><span>Perguntas frequentes</span></a>
+                        <a href="/"><span>Centro de ajuda</span></a>
+                        <a href="/"><span>Termos de uso</span></a>
+                        <a href="/"><span>Privacidade</span></a>
+                        <a href="/"><span>Preferências de cookies</span></a>
+                        <a href="/"><span>Informações coorporativas</span></a>
+                    </div>
+
+                    <div className="select-wrapper">
+                        <label htmlFor="select-lang-signin">
+                            <img src={ GlobeSVG } alt="Globe"/>
+                        </label>
+                        <select id="select-lang-signin" >
+                            <option value="pt">Português</option>
+                            <option value="en">English</option>
+                        </select>
+                    </div>
                 </div>
-
-                <label htmlFor="select-lang-signin" className="select-wrapper">
-                    <select id="select-lang-signin" >
-                        <option value="pt">Português</option>
-                        <option value="en">English</option>
-                    </select>
-                </label>
             </FooterSignIn>
         </Container>
     );
