@@ -13,7 +13,7 @@ export const LoginBody = styled.div`
     padding: 0 5%;
 `;
 
-export const LoginContainer = styled.div`
+export const LoginContainer = styled.div<{ showLearnMore?: boolean}>`
     background-color: rgba(0,0,0,.75);
 
     width: 100%;
@@ -87,18 +87,7 @@ export const LoginContainer = styled.div`
             position: relative;
 
             &:hover {
-                &::after {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-
-                    display: block;
-                    content: '';
-
-                    width: 100%;
-                    height: 1px;
-                    background: #b3b3b3;
-                }             
+                text-decoration: underline;
             }
         }
     }
@@ -141,18 +130,7 @@ export const LoginContainer = styled.div`
             position: relative;
             
             &:hover {
-                &::after {
-                    position: absolute;
-                    bottom: 2px;
-                    left: 0;
-
-                    display: block;
-                    content: '';
-
-                    width: 100%;
-                    height: 1px;
-                    background: #fff;
-                }             
+                text-decoration: underline;          
             }
         }
     }
@@ -162,24 +140,32 @@ export const LoginContainer = styled.div`
         font-size: .85rem;
         color: #8c8c8c;
 
-        a {
+        .open-link {
+            transition: opacity .1s;
+            opacity: ${ props => props.showLearnMore ? '0%' : '100%' };
+            pointer-events: ${ props => props.showLearnMore ? 'none' : 'all' };
+        }
+
+        p {
+            opacity: ${ props => props.showLearnMore ? '100%' : '0%' };
+            pointer-events: ${ props => props.showLearnMore ? 'all' : 'none' };
+
+            font-size: 13px;
+            color: #8c8c8c;
+            margin-top: 12px;
+
+            transition: opacity .1s;
+        }
+
+        span {
             color: #0071eb;
+            cursor: pointer;
+            margin-left: 3px;
 
             position: relative;
             
             &:hover {
-                &::after {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-
-                    display: block;
-                    content: '';
-
-                    width: 100%;
-                    height: 1px;
-                    background: #0071eb;
-                }             
+                text-decoration: underline;            
             }
         }
     }

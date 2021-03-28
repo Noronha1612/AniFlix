@@ -15,7 +15,8 @@ const SignIn: React.FC = () => {
 
     const [ email, setEmail ] = useState(possibleEmail);
     const [ password, setPassword ] = useState('');
-
+    
+    const [ showLearnMore, setShowLearnMore ] = useState(false);
     const [ showPassword, setShowPassword ] = useState(false);
 
     const handleSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
@@ -29,7 +30,7 @@ const SignIn: React.FC = () => {
             </Link>
 
             <LoginBody>
-                <LoginContainer>
+                <LoginContainer showLearnMore={ showLearnMore } >
                     <h1>Entrar</h1>
                     <form onSubmit={ handleSubmit } >
                         <InputBox hasContent={ !!email } >
@@ -81,7 +82,12 @@ const SignIn: React.FC = () => {
                         <a href="/">Assine agora</a>
                     </div>
 
-                    <p>Esta página é protegida pelo Google reCAPTCHA para garantir que você não é um robô. <a href="/">Saiba mais.</a></p>
+                    <p>
+                        Esta página é protegida pelo Google reCAPTCHA para garantir que você não é um robô.
+                        <span className="open-link" onClick={ () => setShowLearnMore(true) }>Saiba mais.</span> 
+                
+                        <p>As informações recolhidas pelo Google reCAPTCHA estão sujeitas à <span>Política de Privacidade</span> e <span>Termos de Uso</span>, e são usadas para oferecer, manter e melhorar o serviço reCAPTCHA e por questões de segurança (não são usadas para exibir anúncios personalizados pelo Google).</p>
+                    </p>
                 </LoginContainer>
             </LoginBody>
 
