@@ -79,7 +79,7 @@ const SignIn: React.FC = () => {
 
                     <div className="register-btn">
                         <span>Novo por aqui?</span>
-                        <a href="/">Assine agora</a>
+                        <Link to="/">Assine agora</Link>
                     </div>
 
                     <p>
