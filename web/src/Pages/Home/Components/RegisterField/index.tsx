@@ -38,6 +38,7 @@ const RegisterField: React.FC = () => {
                         dispatch(set_email(e.target.value));
                         setEmail(e.target.value);
                     }}
+                    required
                 />
                 <label htmlFor={ randomInputId }>Email</label>
             </div>
