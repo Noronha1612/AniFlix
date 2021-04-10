@@ -1,11 +1,16 @@
 import React from 'react';
+import Logo from '../../assets/logo.svg';
 
-import { Container } from './styles';
+import { Container, SignUpHeader, LogoWrapper } from './styles';
 
 const SignUp: React.FC = () => {
     return (
         <Container>
-            Sign Up
+            <SignUpHeader>
+                <LogoWrapper>
+                    <img src={ Logo } alt="AniWatch" />
+                </LogoWrapper>
+            </SignUpHeader>
         </Container>
     );
 }
