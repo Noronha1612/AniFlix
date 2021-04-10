@@ -21,7 +21,7 @@ const RegisterField: React.FC = () => {
     const handleSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         
-        history.push('/login');
+        history.push('/signup');
     }, [ history ]);
 
     return (
