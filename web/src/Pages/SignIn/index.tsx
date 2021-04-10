@@ -82,12 +82,12 @@ const SignIn: React.FC = () => {
                         <Link to="/">Assine agora</Link>
                     </div>
 
-                    <p>
+                    <div>
                         Esta página é protegida pelo Google reCAPTCHA para garantir que você não é um robô.
                         <span className="open-link" onClick={ () => setShowLearnMore(true) }>Saiba mais.</span> 
                 
-                        <p>As informações recolhidas pelo Google reCAPTCHA estão sujeitas à <span>Política de Privacidade</span> e <span>Termos de Uso</span>, e são usadas para oferecer, manter e melhorar o serviço reCAPTCHA e por questões de segurança (não são usadas para exibir anúncios personalizados pelo Google).</p>
-                    </p>
+                        <p className="content-to-show">As informações recolhidas pelo Google reCAPTCHA estão sujeitas à <span>Política de Privacidade</span> e <span>Termos de Uso</span>, e são usadas para oferecer, manter e melhorar o serviço reCAPTCHA e por questões de segurança (não são usadas para exibir anúncios personalizados pelo Google).</p>
+                    </div>
                 </LoginContainer>
             </LoginBody>
 

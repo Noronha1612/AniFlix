@@ -90,4 +90,22 @@ export const FooterSignIn = styled.footer`
             }
         }
     }
+
+    @media(max-width: 740px) {
+        border-top: 1px solid #e5e5e5;
+
+        .content {
+            .hyperlinks-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+
+    @media(max-width: 500px) {
+        .content {
+            .hyperlinks-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
 `;

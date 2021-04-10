@@ -39,4 +39,24 @@ export const Container = styled.div`
         z-index: -10;
         filter: brightness(.5);
     }
+
+    @media(max-width: 740px) {
+        & > a {
+            height: 80px;
+        }
+
+        &::before {
+            background-image: none;
+            background-color: #000;
+        }
+    }
+
+    @media(max-width: 440px) {
+        & > a {
+            height: 60px;
+            img {
+                height: 20px;
+            }
+        }
+    }
 `;

@@ -11,6 +11,14 @@ export const LoginBody = styled.div`
 
     margin: 0 auto -186px;
     padding: 0 5%;
+
+    @media(max-width: 740px) {
+        max-width: none;
+        min-height: initial;
+        padding: 0;
+
+        margin: 0;
+    }
 `;
 
 export const LoginContainer = styled.div<{ showLearnMore?: boolean}>`
@@ -135,7 +143,7 @@ export const LoginContainer = styled.div<{ showLearnMore?: boolean}>`
         }
     }
 
-    .register-btn + p {
+    .register-btn + div {
         margin: 13px 0;
         font-size: .85rem;
         color: #8c8c8c;
@@ -146,7 +154,7 @@ export const LoginContainer = styled.div<{ showLearnMore?: boolean}>`
             pointer-events: ${ props => props.showLearnMore ? 'none' : 'all' };
         }
 
-        p {
+        .content-to-show {
             opacity: ${ props => props.showLearnMore ? '100%' : '0%' };
             pointer-events: ${ props => props.showLearnMore ? 'all' : 'none' };
 
@@ -168,5 +176,27 @@ export const LoginContainer = styled.div<{ showLearnMore?: boolean}>`
                 text-decoration: underline;            
             }
         }
+    }
+    
+    @media(max-width: 740px) {
+        padding: 0 5% 0;
+        margin: 90px 0 0 0;
+
+        min-height: 530px;
+        height: unset;
+
+        .utils-wrapper + button {
+            margin: 2rem 0;
+        }
+
+        .register-btn + div {
+            .content-to-show {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    
+    @media(max-width: 440px) {
+        margin: 60px 0 0 0;
     }
 `;
